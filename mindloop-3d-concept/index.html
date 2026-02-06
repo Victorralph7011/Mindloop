@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindLoop // Neural Hub Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="p-4 sm:p-8">
+
+    <aside class="sidebar">
+        <div class="p-6">
+            <h2 class="text-3xl font-bold tracking-widest text-white">MindLoop</h2>
+            <p class="text-sm text-gray-400">AI-Powered Learning Platform</p>
+        </div>
+        <nav class="flex-grow p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300 active">
+                        <i data-feather="home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                        <i data-feather="compass"></i>
+                        <span>Explorer Levels</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                        <i data-feather="shield"></i>
+                        <span>Challenger Levels</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                        <i data-feather="award"></i>
+                        <span>Masters Arena</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                        <i data-feather="bar-chart-2"></i>
+                        <span>Progress</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                        <i data-feather="star"></i>
+                        <span>Achievements</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="p-4">
+             <a href="#" class="flex items-center space-x-3 p-3 rounded-md text-lg font-semibold transition-all duration-300">
+                <i data-feather="settings"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="main-content-wrapper">
+        <div class="container mx-auto max-w-7xl">
+            <header class="flex justify-between items-center mb-12 fade-in-up">
+                <div class="flex items-center space-x-4">
+                    <button id="menu-toggle-btn" class="text-gray-400 hover:text-white lg:hidden">
+                        <i data-feather="menu" class="w-8 h-8"></i>
+                    </button>
+                    <div class="text-2xl font-bold tracking-widest">MINDLOOP</div>
+                </div>
+                <nav class="flex items-center space-x-6" aria-label="User Stats">
+                    <div class="flex items-center space-x-2" title="Total Points">
+                        <i data-feather="award" class="text-yellow-400"></i>
+                        <span class="text-lg font-bold text-yellow-400">1,250 PTS</span>
+                    </div>
+                     <div class="flex items-center space-x-2" title="Current Streak">
+                        <i data-feather="zap" class="text-pink-400"></i>
+                        <span class="text-lg font-bold text-pink-400">7-DAY STREAK</span>
+                    </div>
+                    <button class="relative" aria-label="Notifications">
+                        <i data-feather="bell" class="text-gray-400 hover:text-white cursor-pointer"></i>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-black" aria-hidden="true"></div>
+                    </button>
+                </nav>
+            </header>
+
+            <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <div class="lg:col-span-2 space-y-8">
+                    <section class="p-8 bg-card border border-glow-cyan rounded-lg interactive-card" aria-labelledby="welcome-heading">
+                        <h1 id="welcome-heading" class="text-4xl font-bold mb-2">Welcome Back, Victor</h1>
+                        <p class="text-lg text-gray-400 mb-8">The system is online. Your mind is ready for an upgrade.</p>
+                        <button class="w-full py-4 bg-cyan-500 text-black text-xl font-bold tracking-wider hover:bg-cyan-400 transition-all duration-300 neon-glow-blue rounded-md">
+                            INITIATE STUDY SEQUENCE
+                        </button>
+                    </section>
+
+                    <section class="p-8 bg-card border border-glow-cyan rounded-lg interactive-card" aria-labelledby="neural-map-heading">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 id="neural-map-heading" class="text-2xl font-bold tracking-wider">NEURAL MAP</h2>
+                            <span class="text-sm font-bold text-cyan-400">75% EXPLORED</span>
+                        </div>
+                        <p class="text-gray-400 mb-6">Your knowledge visualized. Complete topics to unlock new pathways and reveal hidden data fragments.</p>
+                        <div class="w-full h-40 bg-black/30 rounded-md flex items-center justify-center border border-gray-700">
+                            <p class="text-gray-600 font-bold"></p>
+                        </div>
+                         <button class="w-full mt-6 py-3 bg-transparent text-cyan-400 text-lg font-bold tracking-wider border-2 border-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 rounded-md">
+                            VIEW FULL MAP
+                        </button>
+                    </section>
+
+                    <section class="p-8 bg-card border border-glow-cyan rounded-lg interactive-card" aria-labelledby="progress-matrix-heading">
+                        <h2 id="progress-matrix-heading" class="text-2xl font-bold tracking-wider mb-6">PROGRESS MATRIX</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-lg bg-cyan-900/50 border border-cyan-700 text-center transition-all duration-300">
+                                <div class="flex justify-center items-center mb-3">
+                                    <i data-feather="check-circle" class="w-8 h-8 text-cyan-400"></i>
+                                </div>
+                                <h3 class="text-xl font-bold tracking-wider text-white">EXPLORER</h3>
+                                <p class="text-sm text-gray-300 mt-1">Foundational concepts mastered.</p>
+                            </div>
+
+                            <div class="p-4 rounded-lg bg-pink-900/50 border-2 border-pink-500 text-center transition-all duration-300 scale-105 shadow-lg shadow-pink-500/20">
+                                <div class="flex justify-center items-center mb-3">
+                                    <i data-feather="shield" class="w-8 h-8 text-pink-400"></i>
+                                </div>
+                                <h3 class="text-xl font-bold tracking-wider text-white">CHALLENGER</h3>
+                                <p class="text-sm text-gray-300 mt-1">Applying knowledge and facing complex problems.</p>
+                            </div>
+
+                            <div class="p-4 rounded-lg bg-gray-800/50 border border-gray-700 text-center transition-all duration-300 opacity-60">
+                                <div class="flex justify-center items-center mb-3">
+                                    <i data-feather="lock" class="w-8 h-8 text-gray-500"></i>
+                                </div>
+                                <h3 class="text-xl font-bold tracking-wider text-gray-400">MASTER</h3>
+                                <p class="text-sm text-gray-500 mt-1">Achieve ultimate understanding and innovation.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <section class="p-6 bg-card border border-glow-pink rounded-lg interactive-card h-full flex flex-col justify-between" aria-labelledby="ai-coach-heading">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i data-feather="cpu" class="text-pink-400"></i>
+                                <h2 id="ai-coach-heading" class="text-xl font-bold tracking-wider text-pink-400">AI MEMORY COACH</h2>
+                            </div>
+                            <p class="text-gray-300">
+                                Analysis complete. Personalized quiz generated for <span class="text-white font-semibold">Thermodynamics</span>.
+                            </p>
+                        </div>
+                        <button class="w-full mt-4 py-3 bg-pink-500 text-black text-lg font-bold tracking-wider hover:bg-pink-400 transition-all duration-300 neon-glow-pink rounded-md">
+                            BEGIN COACHING
+                        </button>
+                    </section>
+
+                    <section class="p-6 bg-card border border-glow-cyan rounded-lg interactive-card" aria-labelledby="global-sync-heading">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-feather="globe" class="text-cyan-400"></i>
+                            <h2 id="global-sync-heading" class="text-xl font-bold tracking-wider text-cyan-400">GLOBAL SYNC</h2>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-sm text-gray-400 uppercase tracking-wider">Current Rank</h3>
+                            <p class="text-4xl font-bold">1,337</p>
+                            <h3 class="text-sm text-gray-400 uppercase tracking-wider mt-2">Tier</h3>
+                            <p class="text-lg font-bold text-yellow-400">GOLD</p>
+                        </div>
+                         <button class="w-full mt-4 py-3 bg-transparent text-yellow-400 text-lg font-bold tracking-wider border-2 border-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 rounded-md">
+                            START REVISION BATTLE
+                        </button>
+                    </section>
+
+                    <section class="p-6 bg-card border border-gray-700/50 rounded-lg interactive-card" aria-labelledby="augments-heading">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-feather="bar-chart-2" class="text-gray-400"></i>
+                            <h2 id="augments-heading" class="text-xl font-bold tracking-wider text-gray-400">ACTIVE AUGMENTS</h2>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i data-feather="zap" class="w-5 h-5 text-pink-400"></i>
+                                <p><span class="font-bold">7-Day Streak:</span> +10% Point Boost</p>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-feather="book-open" class="w-5 h-5 text-cyan-400"></i>
+                                <p><span class="font-bold">Physics Master:</span> AI hints are enhanced.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer class="text-center text-gray-600 mt-12 py-4 border-t border-gray-800">
+                <p>&copy; 2025 MindLoop Corporation. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Call Feather Icons
+        feather.replace();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

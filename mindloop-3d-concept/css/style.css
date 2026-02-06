@@ -1,0 +1,153 @@
+/*
+    NOTE ON PERFORMANCE & DEPENDENCIES:
+    Loading assets directly from a CDN in the <head> can block rendering and creates external dependencies.
+    For a production environment, it's recommended to use a build tool (like Vite or Webpack)
+    to bundle, minify, and self-host all necessary assets.
+*/
+
+/*
+    NOTE ON ACCESSIBILITY (COLOR CONTRAST):
+    Some text colors (e.g., text-gray-400 on the dark background) may not meet
+    WCAG AA contrast ratio requirements (4.5:1). A full color palette review is
+    recommended to ensure legibility for all users.
+*/
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0A0A10;
+    color: #E0E0E0;
+    overflow-x: hidden;
+    /* Add a subtle background grid for the cyberpunk feel */
+    background-image:
+        linear-gradient(rgba(0, 190, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 190, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- ACCESSIBILITY ENHANCEMENT --- */
+/* Add a clear, visible focus indicator for all interactive elements for keyboard users. */
+*:focus-visible {
+    outline: 2px solid #00BEFF; /* A cyan that matches the theme */
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* --- NEW: SIDEBAR STYLES --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(10, 10, 16, 0.8); /* Darker version of body for contrast */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(0, 190, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sidebar nav a {
+    color: #a0aec0; /* text-gray-400 */
+}
+
+.sidebar nav a:hover {
+    color: #ffffff;
+    background-color: rgba(0, 190, 255, 0.1);
+}
+
+.sidebar nav a.active {
+    color: #ffffff;
+    background-color: rgba(0, 190, 255, 0.15);
+    border-left: 4px solid #00BEFF;
+    font-weight: 700;
+}
+
+.sidebar nav a.active i {
+    color: #00BEFF;
+}
+
+/* --- NEW: MAIN CONTENT WRAPPER STYLES --- */
+.main-content-wrapper {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- NEW: SIDEBAR OPEN STATE --- */
+body.sidebar-open.sidebar {
+    transform: translateX(0);
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+   .sidebar {
+        transform: translateX(0);
+    }
+   .main-content-wrapper {
+        margin-left: 280px;
+    }
+    body.sidebar-open.main-content-wrapper {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1023px) { /* Below lg breakpoint */
+    body.sidebar-open.main-content-wrapper {
+        transform: translateX(280px);
+    }
+}
+
+
+/* A semi-transparent background for all cards to create depth */
+.bg-card {
+    background-color: rgba(20, 20, 35, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom glow effect for borders */
+.border-glow-cyan {
+    border-color: rgba(0, 190, 255, 0.3);
+}
+.border-glow-pink {
+    border-color: rgba(255, 50, 150, 0.3);
+}
+
+.interactive-card:hover {
+    box-shadow: 0 0 20px rgba(0, 190, 255, 0.1);
+}
+.interactive-card:hover.border-glow-pink {
+    box-shadow: 0 0 20px rgba(255, 50, 150, 0.1);
+}
+
+
+/* Custom glow effect for buttons */
+.neon-glow-blue {
+    box-shadow: 0 0 8px rgba(0, 190, 255, 0.5), 0 0 16px rgba(0, 190, 255, 0.4);
+}
+.neon-glow-pink {
+    box-shadow: 0 0 8px rgba(255, 50, 150, 0.5), 0 0 16px rgba(255, 50, 150, 0.4);
+}
+
+/* Base style for interactive cards */
+.interactive-card {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+/* Animation for elements on load */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
